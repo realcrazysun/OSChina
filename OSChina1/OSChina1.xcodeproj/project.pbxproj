@@ -20,6 +20,12 @@
 		A708732B1C0B221800F71342 /* OSCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A708732A1C0B221800F71342 /* OSCTabBarController.m */; };
 		A726EA4A1C0B333C002CC6F9 /* UIView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = A726EA491C0B333C002CC6F9 /* UIView+Util.m */; };
 		A726EA4D1C0B350D002CC6F9 /* UIColor+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = A726EA4C1C0B350D002CC6F9 /* UIColor+Util.m */; };
+		A726EA541C0C1476002CC6F9 /* OSCObjsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A726EA531C0C1476002CC6F9 /* OSCObjsTableViewController.m */; };
+		A726EA611C0C4E5D002CC6F9 /* SGActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A726EA601C0C4E5D002CC6F9 /* SGActionView.m */; };
+		A726EA6B1C0C4E75002CC6F9 /* SGBaseMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A726EA641C0C4E75002CC6F9 /* SGBaseMenu.m */; };
+		A726EA6C1C0C4E75002CC6F9 /* SGAlertMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A726EA661C0C4E75002CC6F9 /* SGAlertMenu.m */; };
+		A726EA6D1C0C4E75002CC6F9 /* SGGridMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A726EA681C0C4E75002CC6F9 /* SGGridMenu.m */; };
+		A726EA6E1C0C4E75002CC6F9 /* SGSheetMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = A726EA6A1C0C4E75002CC6F9 /* SGSheetMenu.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +71,19 @@
 		A726EA491C0B333C002CC6F9 /* UIView+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Util.m"; sourceTree = "<group>"; };
 		A726EA4B1C0B350D002CC6F9 /* UIColor+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Util.h"; sourceTree = "<group>"; };
 		A726EA4C1C0B350D002CC6F9 /* UIColor+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Util.m"; sourceTree = "<group>"; };
+		A726EA521C0C1476002CC6F9 /* OSCObjsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCObjsTableViewController.h; sourceTree = "<group>"; };
+		A726EA531C0C1476002CC6F9 /* OSCObjsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCObjsTableViewController.m; sourceTree = "<group>"; };
+		A726EA5D1C0C4278002CC6F9 /* CommonDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonDefines.h; sourceTree = "<group>"; };
+		A726EA5F1C0C4E5D002CC6F9 /* SGActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGActionView.h; sourceTree = "<group>"; };
+		A726EA601C0C4E5D002CC6F9 /* SGActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGActionView.m; sourceTree = "<group>"; };
+		A726EA631C0C4E75002CC6F9 /* SGBaseMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBaseMenu.h; sourceTree = "<group>"; };
+		A726EA641C0C4E75002CC6F9 /* SGBaseMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBaseMenu.m; sourceTree = "<group>"; };
+		A726EA651C0C4E75002CC6F9 /* SGAlertMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGAlertMenu.h; sourceTree = "<group>"; };
+		A726EA661C0C4E75002CC6F9 /* SGAlertMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGAlertMenu.m; sourceTree = "<group>"; };
+		A726EA671C0C4E75002CC6F9 /* SGGridMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGGridMenu.h; sourceTree = "<group>"; };
+		A726EA681C0C4E75002CC6F9 /* SGGridMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGGridMenu.m; sourceTree = "<group>"; };
+		A726EA691C0C4E75002CC6F9 /* SGSheetMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSheetMenu.h; sourceTree = "<group>"; };
+		A726EA6A1C0C4E75002CC6F9 /* SGSheetMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSheetMenu.m; sourceTree = "<group>"; };
 		CA27EC26983E8DCE0327AA16 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E02C7A6326BCB634D98DC071 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -204,7 +223,8 @@
 		A708731C1C0B1DD100F71342 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A70873201C0B1FFF00F71342 /* main */,
+				A726EA4E1C0C13A2002CC6F9 /* MainViewControllers */,
+				A70873201C0B1FFF00F71342 /* RootViewControllers */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -212,6 +232,7 @@
 		A708731D1C0B1DDF00F71342 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A726EA5C1C0C4251002CC6F9 /* defines */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -234,7 +255,7 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		A70873201C0B1FFF00F71342 /* main */ = {
+		A70873201C0B1FFF00F71342 /* RootViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				A70873251C0B219800F71342 /* Tab Bar */,
@@ -243,7 +264,7 @@
 				A70873211C0B208600F71342 /* RootViewController.h */,
 				A70873221C0B208600F71342 /* RootViewController.m */,
 			);
-			name = main;
+			name = RootViewControllers;
 			sourceTree = "<group>";
 		};
 		A70873241C0B217A00F71342 /* SideMenu */ = {
@@ -258,10 +279,61 @@
 		A70873251C0B219800F71342 /* Tab Bar */ = {
 			isa = PBXGroup;
 			children = (
+				A726EA551C0C3A7A002CC6F9 /* 弹出框 */,
 				A70873291C0B221800F71342 /* OSCTabBarController.h */,
 				A708732A1C0B221800F71342 /* OSCTabBarController.m */,
 			);
 			name = "Tab Bar";
+			sourceTree = "<group>";
+		};
+		A726EA4E1C0C13A2002CC6F9 /* MainViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A726EA521C0C1476002CC6F9 /* OSCObjsTableViewController.h */,
+				A726EA531C0C1476002CC6F9 /* OSCObjsTableViewController.m */,
+			);
+			name = MainViewControllers;
+			sourceTree = "<group>";
+		};
+		A726EA551C0C3A7A002CC6F9 /* 弹出框 */ = {
+			isa = PBXGroup;
+			children = (
+				A726EA5E1C0C4E2F002CC6F9 /* SGActionView */,
+			);
+			name = "弹出框";
+			sourceTree = "<group>";
+		};
+		A726EA5C1C0C4251002CC6F9 /* defines */ = {
+			isa = PBXGroup;
+			children = (
+				A726EA5D1C0C4278002CC6F9 /* CommonDefines.h */,
+			);
+			name = defines;
+			sourceTree = "<group>";
+		};
+		A726EA5E1C0C4E2F002CC6F9 /* SGActionView */ = {
+			isa = PBXGroup;
+			children = (
+				A726EA621C0C4E66002CC6F9 /* SGMenu */,
+				A726EA5F1C0C4E5D002CC6F9 /* SGActionView.h */,
+				A726EA601C0C4E5D002CC6F9 /* SGActionView.m */,
+			);
+			name = SGActionView;
+			sourceTree = "<group>";
+		};
+		A726EA621C0C4E66002CC6F9 /* SGMenu */ = {
+			isa = PBXGroup;
+			children = (
+				A726EA631C0C4E75002CC6F9 /* SGBaseMenu.h */,
+				A726EA641C0C4E75002CC6F9 /* SGBaseMenu.m */,
+				A726EA651C0C4E75002CC6F9 /* SGAlertMenu.h */,
+				A726EA661C0C4E75002CC6F9 /* SGAlertMenu.m */,
+				A726EA671C0C4E75002CC6F9 /* SGGridMenu.h */,
+				A726EA681C0C4E75002CC6F9 /* SGGridMenu.m */,
+				A726EA691C0C4E75002CC6F9 /* SGSheetMenu.h */,
+				A726EA6A1C0C4E75002CC6F9 /* SGSheetMenu.m */,
+			);
+			name = SGMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -445,13 +517,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A726EA611C0C4E5D002CC6F9 /* SGActionView.m in Sources */,
+				A726EA6B1C0C4E75002CC6F9 /* SGBaseMenu.m in Sources */,
 				A726EA4A1C0B333C002CC6F9 /* UIView+Util.m in Sources */,
+				A726EA541C0C1476002CC6F9 /* OSCObjsTableViewController.m in Sources */,
 				A70872EB1C0B1CD400F71342 /* AppDelegate.m in Sources */,
 				A70873281C0B21CA00F71342 /* SideMenuTableViewController.m in Sources */,
 				A726EA4D1C0B350D002CC6F9 /* UIColor+Util.m in Sources */,
+				A726EA6D1C0C4E75002CC6F9 /* SGGridMenu.m in Sources */,
+				A726EA6E1C0C4E75002CC6F9 /* SGSheetMenu.m in Sources */,
 				A70872E81C0B1CD400F71342 /* main.m in Sources */,
 				A708732B1C0B221800F71342 /* OSCTabBarController.m in Sources */,
 				A70873231C0B208600F71342 /* RootViewController.m in Sources */,
+				A726EA6C1C0C4E75002CC6F9 /* SGAlertMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
