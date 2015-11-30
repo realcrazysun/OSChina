@@ -31,7 +31,7 @@ git push origin master  提交<br>
 ---
 headerView中图像与名称布局
 ```cpp
- NSDictionary *views = NSDictionaryOfVariableBindings(avatar, nameLabel);
+    NSDictionary *views = NSDictionaryOfVariableBindings(avatar, nameLabel);
     NSDictionary *metrics = @{@"x": @([UIScreen mainScreen].bounds.size.width / 4 - 15)};
     [headerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[avatar(60)]-10-[nameLabel]-15-|" options:NSLayoutFormatAlignAllCenterX metrics:nil views:views]];
     [headerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-x-[avatar(60)]" options:0 metrics:metrics views:views]];
