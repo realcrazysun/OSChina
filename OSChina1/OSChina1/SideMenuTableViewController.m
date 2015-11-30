@@ -19,7 +19,8 @@
     [super viewDidLoad];
     self.tableView.bounces = NO;//禁止拖动
     self.view.backgroundColor = [UIColor grayColor];
-    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;//表格分割线
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -116,6 +117,7 @@
     UITableViewCell *cell = [UITableViewCell new];
     
     cell.backgroundColor = [UIColor clearColor];
+ 
     
     UIView *selectedBackground = [UIView new];
     selectedBackground.backgroundColor = [UIColor colorWithHex:0xCFCFCF];
@@ -124,71 +126,77 @@
     cell.imageView.image = [UIImage imageNamed:@[@"sidemenu_QA", @"sidemenu-software", @"sidemenu_blog", @"sidemenu_setting", @"sidemenu-night"][indexPath.row]];
     cell.textLabel.text = @[@"技术问答", @"开源软件", @"博客区", @"设置", @"夜间模式", @"注销"][indexPath.row];
     
-    //     if (((AppDelegate *)[UIApplication sharedApplication].delegate).inNightMode){
-    //         cell.textLabel.textColor = [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1.0];
-    //         if (indexPath.row == 4) {
-    //             cell.textLabel.text = @"日间模式";
-    //             cell.imageView.image = [UIImage imageNamed:@"sidemenu-day"];
-    //         }
-    //     } else {
-    //         cell.textLabel.textColor = [UIColor colorWithHex:0x555555];
-    //         if (indexPath.row == 4) {
-    //             cell.textLabel.text = @"夜间模式";
-    //             cell.imageView.image = [UIImage imageNamed:@"sidemenu-night"];
-    //         }
-    //     }
+
     cell.textLabel.font = [UIFont systemFontOfSize:19];
     
     cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
-    //     cell.selectedBackgroundView.backgroundColor = [UIColor selectCellSColor];
+
     
     return cell;
     
 }
 
+//跳转连接 注意didSelectRowAtIndexPath 与 didDeSelectRowAtIndexPath区别  选中行 与 取消选中
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];//取消选中状态
+    NSLog(@"indexPath.row:%ld",indexPath.row);
+    switch (indexPath.row) {
+        case 0:{
+            //跳转到技术问答
+            [self gotoTechQuestionAndAnswer];
+            break;
+        }
+        case 1:
+        {
+            //跳转到开源软件
+            [self gotoOpenSourceSoftware];
+            break;
+        }
+        case 2:
+        {
+            //跳转到博客
+            [self gotoBlog];
+            break;
+        }
+        case 3:
+        {
+            //设置页面
+            [self gotoSettingPage];
+            break;
+        }
+        case 4:
+        {
+            //日夜模式
+            [self changeMode];
+            break;
+        }
+        default: break;
 
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
+    }
+}
 
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
+-(void)gotoTechQuestionAndAnswer
+{
+    NSLog(@"gotoTechQuestionAndAnswer");
+}
 
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
- }
- */
+-(void)gotoOpenSourceSoftware
+{
+    NSLog(@"gotoOpenSourceSoftware");
+}
 
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+-(void)gotoBlog
+{
+    NSLog(@"gotoBlog");
+}
+-(void)gotoSettingPage
+{
+    NSLog(@"gotoSettingPage");
+}
+-(void)changeMode
+{
+    NSLog(@"changeMode");
+}
 
 @end
