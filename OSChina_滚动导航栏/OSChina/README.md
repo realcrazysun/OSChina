@@ -55,4 +55,32 @@ SwipableViewController 用来是新闻内容的导航容器 由标题栏和横�
 
 HorizonTableViewController是通过继承自UITableViewController来实现<br>
 原作者这里写的有点奇怪 继承了UITableViewController但是又在ViewDidLoad中self.tableView = [UITableView new];<br>
-核心思想是在ViewDidLoad中将tableView逆时针旋转90度 再在cellForRowAtIndexPath 将ViewController旋转回来  这样就实现了横向转动
+核心思想是在ViewDidLoad中将tableView逆时针旋转90度 再在cellForRowAtIndexPath 将ViewController旋转回来  这样就实现了横向转动<br>
+在滚动的同时对应的标题要有滚动效果<br>
+```
+- (void)scrollStop:(BOOL)didScrollStop
+{
+    CGFloat horizonalOffset = self.tableView.contentOffset.y;
+    CGFloat screenWidth = self.tableView.frame.size.width;
+    CGFloat offsetRatio = (NSUInteger)horizonalOffset % (NSUInteger)screenWidth / screenWidth;
+    NSUInteger focusIndex = (horizonalOffset + screenWidth / 2) / screenWidth;
+    
+    
+    NSLog(@"horizonalOffset---%d",horizonalOffset == focusIndex * screenWidth);//存在相等的情况
+    if (horizonalOffset != focusIndex * screenWidth) {
+        NSUInteger animationIndex = horizonalOffset > focusIndex * screenWidth ? focusIndex + 1: focusIndex - 1;
+        if (focusIndex > animationIndex) {offsetRatio = 1 - offsetRatio;}
+        if (_scrollView) {
+            
+            _scrollView(offsetRatio, focusIndex, animationIndex);
+        }
+    }
+    if (didScrollStop) {
+
+        _currentIndex = focusIndex;
+        
+        if (_changeIndex) {_changeIndex(focusIndex);}
+    }
+
+```
+在SwipableViewController中实现scrollView block定义<br>
