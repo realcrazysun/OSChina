@@ -10,6 +10,10 @@
 
 @interface HorizonTableViewController : UITableViewController
 @property(nonatomic,strong)NSMutableArray *controllers;
-
+@property(nonatomic,assign)NSUInteger currentIndex;
+@property (nonatomic, copy) void (^scrollView)(CGFloat offsetRatio, NSUInteger focusIndex, NSUInteger animationIndex);
+@property (nonatomic, copy) void (^changeIndex)(NSUInteger index);
 - (instancetype)initWithViewControllers:(NSArray *)controllers;
+
+- (void)scrollToViewAtIndex:(NSUInteger)index;
 @end

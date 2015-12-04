@@ -34,7 +34,6 @@
         }
         CGFloat titleBarHeight = 36;
         _titleBar = [[TitleBarView alloc] initWithFrameAndTitles:CGRectMake(0, 0, self.view.bounds.size.width, titleBarHeight)  andTitles:subTitles];
-//        _titleBar.backgroundColor = [UIColor clearColor];
         [self.view addSubview:_titleBar];
         
         CGFloat horizonViewControllerHeight = self.view.bounds.size.height - titleBarHeight;
@@ -42,17 +41,53 @@
         _horizonViewController.view.frame = CGRectMake(0, titleBarHeight, self.view.bounds.size.width, horizonViewControllerHeight);
         [self.view addSubview:_horizonViewController.view];
         [self addChildViewController:_horizonViewController];
+        
+        __weak TitleBarView *weakTitleBar = _titleBar;
+        __weak HorizonTableViewController *weakViewPager = _horizonViewController;
+        
+        
+        _horizonViewController.changeIndex = ^(NSUInteger index) {
+            [weakTitleBar setTitleButtonsColor:index];
+            [weakViewPager scrollToViewAtIndex:index];
+        };
+        
+        _horizonViewController.scrollView = ^(CGFloat offsetRatio, NSUInteger focusIndex, NSUInteger animationIndex) {
+            NSLog(@"scrollView scrollView scrollView");
+            UIButton *titleFrom = weakTitleBar.titleBtns[animationIndex];
+            UIButton *titleTo = weakTitleBar.titleBtns[focusIndex];
+            CGFloat colorValue = (CGFloat)0x90 / (CGFloat)0xFF;
+            
+            [UIView transitionWithView:titleFrom duration:0.1 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+                [titleFrom setTitleColor:[UIColor colorWithRed:colorValue*(1-offsetRatio) green:colorValue blue:colorValue*(1-offsetRatio) alpha:1.0]
+                                forState:UIControlStateNormal];
+                titleFrom.transform = CGAffineTransformMakeScale(1 + 0.2 * offsetRatio, 1 + 0.2 * offsetRatio);
+            } completion:nil];
+            
+            
+            [UIView transitionWithView:titleTo duration:0.1 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+                [titleTo setTitleColor:[UIColor colorWithRed:colorValue*offsetRatio green:colorValue blue:colorValue*offsetRatio alpha:1.0]
+                              forState:UIControlStateNormal];
+                titleTo.transform = CGAffineTransformMakeScale(1 + 0.2 * (1-offsetRatio), 1 + 0.2 * (1-offsetRatio));
+            } completion:nil];
+        };
+        
+        _titleBar.titleButtonClicked = ^(NSUInteger index) {
+            [weakTitleBar setTitleButtonsColor:index];
+            [weakViewPager scrollToViewAtIndex:index];
+        };
     }
     return self;
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

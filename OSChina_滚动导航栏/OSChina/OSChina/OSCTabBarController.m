@@ -42,11 +42,11 @@
     UIViewController* controller6 = [[UIViewController alloc] init];
     controller6.view.backgroundColor = [UIColor greenColor];
     UIViewController* controller7 = [[UIViewController alloc] init];
-    controller7.view.backgroundColor = [UIColor greenColor];
+    controller7.view.backgroundColor = [UIColor blackColor];
     UIViewController* controller8 = [[UIViewController alloc] init];
-    controller8.view.backgroundColor = [UIColor greenColor];
+    controller8.view.backgroundColor = [UIColor redColor];
     UIViewController* controller9 = [[UIViewController alloc] init];
-    controller9.view.backgroundColor = [UIColor greenColor];
+    controller9.view.backgroundColor = [UIColor blueColor];
     SwipableViewController *newsSVC = [[SwipableViewController alloc] initWithTitle:@"综合"
                                                                        andSubTitles:@[@"资讯", @"热点", @"博客", @"推荐"]
                                                                      andControllers:@[controller6, controller7, controller8,controller9]

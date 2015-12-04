@@ -45,15 +45,9 @@ static NSString *kHorizonalCellID = @"HorizonalCell";
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
-//
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//    
-//    return 1;
-//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -70,7 +64,7 @@ static NSString *kHorizonalCellID = @"HorizonalCell";
 {
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kHorizonalCellID forIndexPath:indexPath];
     cell.contentView.transform = CGAffineTransformMakeRotation(M_PI_2); //因为转了90度 所以要转回来
-    // cell.contentView.backgroundColor = [UIColor themeColor];
+    cell.contentView.backgroundColor = [UIColor themeColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     UIViewController *controller = _controllers[indexPath.row];
@@ -79,8 +73,47 @@ static NSString *kHorizonalCellID = @"HorizonalCell";
     
     return cell;
 }
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [self scrollStop:YES];
+}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self scrollStop:NO];
+}
 
+-(void)scrollToViewAtIndex:(NSUInteger)index
+{
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:NO];
+    _currentIndex = index;
+}
 
+- (void)scrollStop:(BOOL)didScrollStop
+{
+    CGFloat horizonalOffset = self.tableView.contentOffset.y;
+    CGFloat screenWidth = self.tableView.frame.size.width;
+    CGFloat offsetRatio = (NSUInteger)horizonalOffset % (NSUInteger)screenWidth / screenWidth;
+    NSUInteger focusIndex = (horizonalOffset + screenWidth / 2) / screenWidth;
+    
+    
+    NSLog(@"horizonalOffset---%d",horizonalOffset == focusIndex * screenWidth);//存在相等的情况
+    if (horizonalOffset != focusIndex * screenWidth) {
+        NSUInteger animationIndex = horizonalOffset > focusIndex * screenWidth ? focusIndex + 1: focusIndex - 1;
+        if (focusIndex > animationIndex) {offsetRatio = 1 - offsetRatio;}
+        if (_scrollView) {
+            
+            _scrollView(offsetRatio, focusIndex, animationIndex);
+        }
+    }
+    
+    if (didScrollStop) {
+
+        _currentIndex = focusIndex;
+        
+        if (_changeIndex) {_changeIndex(focusIndex);}
+    }
+
+}
 /*
  // Override to support conditional editing of the table view.
  - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

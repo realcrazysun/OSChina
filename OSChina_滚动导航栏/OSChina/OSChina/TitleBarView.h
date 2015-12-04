@@ -13,5 +13,5 @@
 @property(nonatomic,assign) NSUInteger currentIndex;
 @property (nonatomic, copy) void (^titleButtonClicked)(NSUInteger index);//block代替协议 用copy放在堆中
 -(instancetype)initWithFrameAndTitles:(CGRect)frame andTitles: (NSArray*) titles;
--(void)setTitleButtonsColor;
+-(void)setTitleButtonsColor:(NSUInteger)currentIndex;
 @end

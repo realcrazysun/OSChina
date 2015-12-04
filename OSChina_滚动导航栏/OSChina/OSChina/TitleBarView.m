@@ -71,4 +71,19 @@
     }
     
 }
+
+-(void)setTitleButtonsColor:(NSUInteger)currentIndex
+{
+    _currentIndex = currentIndex;
+    for (UIButton *button in _titleBtns) {
+        if (button.tag != currentIndex) {
+            [button setTitleColor:[UIColor colorWithNormalTitleBar] forState:UIControlStateNormal];
+            button.transform = CGAffineTransformIdentity;
+        } else {
+            [button setTitleColor:[UIColor colorWithClickedTitleBar] forState:UIControlStateNormal];
+            button.transform = CGAffineTransformMakeScale(1.2, 1.2);
+        }
+    }
+    
+}
 @end
