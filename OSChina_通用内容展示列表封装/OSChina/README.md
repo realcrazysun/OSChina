@@ -1,5 +1,22 @@
-开源中国主界面搭建
-====//
+开源中国通用内容展示界面
+====
+这部分涉及的内容相当多，也做了很久 其中设计思路比较值得学习  如何通过继承和block来实现封装和多态
+---
+## - 网络通信
+## - 通用内容展示MVC
+### - model部分
+- xml解析 ONO XML解析
+- 重写isEqual方法 来避免重复加载数据
+### - view部分
+- 自定义TableViewCell 
+- 代码VFL布局 参考SoftwareCell
+                                                              
+
+### - controller部分
+
+
+
+
 1、cocoapod & git
 ---
 管理第三方库 pod install --verbose --no-repo-update<br>
