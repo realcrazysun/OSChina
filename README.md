@@ -1,7 +1,6 @@
-# OSChina
 # 开源中国之庖丁解牛
 
-一
+一、
 ---
 开源中国主界面搭建
 ====
@@ -10,6 +9,7 @@
 管理第三方库 pod install --verbose --no-repo-update<br>
 git pull origin master  更新<br>
 git push origin master  提交<br>
+VVDocument--好用的注释插件<br>
 
 2、第三方库ReSideMenu简单使用<br>
 ---
