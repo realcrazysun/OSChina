@@ -80,7 +80,7 @@ self.viewControllers = @[
 
 
 二、 SwipableViewController--横向滚动视图封装
-
+---
 SwipableViewController 用来是新闻内容的导航容器 由标题栏和横向滚动视图组成
 
   - TitleBarView
