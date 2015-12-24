@@ -284,13 +284,13 @@ GCD使用
 
  四、DetailViewController--详情页面展示
 --
-#UIPageViewController--表情输入框展示
+###UIPageViewController--表情输入框展示
 
-#accessibilityIdentifer--用来标识imageView  类似tag  可做重复标识
+###accessibilityIdentifer--用来标识imageView  类似tag  可做重复标识
 
-#SEL与performSelector使用  指向方法
+###SEL与performSelector使用  指向方法
 
-#webView三种加载方式
+###webView三种加载方式
 
 
 
