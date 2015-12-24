@@ -177,7 +177,7 @@ HorizonTableViewController是通过继承自UITableViewController来实现<br>
 - OSCBaseObject
 - xml解析 ONO XML解析
 - 重写isEqual方法 来避免重复加载数据<br>
-### - view部分
+### view部分
 - 自定义TableViewCell 
 - 代码VFL布局 参考SoftwareCell
                                                               
