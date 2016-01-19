@@ -8,7 +8,7 @@
 git pull origin master  更新<br>
 git push origin master  提交<br>
 VVDocument--好用的注释插件<br>
-
+gooreplace chrome 插件 替代被SX墙的google css方案  
 2、第三方库ReSideMenu简单使用<br>
 ---
 ```c++
